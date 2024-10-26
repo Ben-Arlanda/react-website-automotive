@@ -1,5 +1,25 @@
 function App() {
 
+    const cards = [
+
+    {id: 0,
+      title: 'Heading 1',
+      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste',
+      image: '/brisbane_vgpzva.jpg'
+    },
+      {id: 1,
+      title: 'Heading 2',
+      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste',
+      image: '/brisbane_vgpzva.jpg'
+    },
+      {id: 2,
+      title: 'Heading 3',
+      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae ',
+      image: '/brisbane_vgpzva.jpg',
+      extraText: "Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste"
+    },
+  ]
+
   return (
     <>
     <section>
