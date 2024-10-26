@@ -1,24 +1,31 @@
+import { useState } from "react";
+import { Card } from "./components/card";
+
 function App() {
+  const [activeCard, setActiveCard] = useState(1)
 
-    const cards = [
+const cards = [
+  {id: 0,
+    title: 'Heading 1',
+    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste',
+    image: '/brisbane_vgpzva.jpg'
+  },
+    {id: 1,
+    title: 'Heading 2',
+    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste',
+    image: '/brisbane_vgpzva.jpg'
+  },
+    {id: 2,
+    title: 'Heading 3',
+    text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae ',
+    image: '/brisbane_vgpzva.jpg',
+    extraText: "Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste"
+  },
+]
 
-    {id: 0,
-      title: 'Heading 1',
-      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste',
-      image: '/brisbane_vgpzva.jpg'
-    },
-      {id: 1,
-      title: 'Heading 2',
-      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste',
-      image: '/brisbane_vgpzva.jpg'
-    },
-      {id: 2,
-      title: 'Heading 3',
-      text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illo eos unde molestiae ',
-      image: '/brisbane_vgpzva.jpg',
-      extraText: "Architecto illo eos unde molestiae voluptas quaerat totam ducimus amet cumque delectus qui sed iste"
-    },
-  ]
+  const handleClick = (id) => {
+    setActiveCard(id)
+  }
 
   return (
     <>
@@ -38,6 +45,19 @@ function App() {
             Contact Us
           </button>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="flex md:justify-center items-center py-6 space-x-7 md:mt-4 mr-4 ml-4">
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              card={card}
+              isActive={activeCard === card.id}
+              onClick={() => handleClick(card.id)}
+            />
+          ))}
         </div>
       </section>
     </>
