@@ -34,12 +34,12 @@ return (
         <img
           src="/ford-ranger_rd5m4t.jpg"
           alt="Ford Ranger"
-          className="w-full md:h-auto shadow-lg"
+          className="min-h-48 object-cover"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-1 flex flex-col justify-center items-center text-center text-gray-200">
-          <h1 className="md:text-3xl text-xs font-bold md:mb-4 mt-2 transition-all duration-300 ease-in-out mb-1">
+        <div className="absolute inset-1 flex flex-col justify-center items-center text-center text-white">
+          <h1 className="md:text-3xl text-base font-bold md:mb-4 mt-2 transition-all duration-300 ease-in-out mb-1">
           Welcome to G Automotive
           </h1>
           <p className="max-w-lg md:mb-5 mb-2 md:text-xs text-xxs w-auto h-auto overflow-hidden mr-6 ml-6">
@@ -53,8 +53,8 @@ return (
       </div>
     </section>
 
-    <section>
-      <div className="flex md:justify-center items-center py-6 space-x-7 md:mt-4 mr-4 ml-4">
+    <section className="flex justify-center items-center">
+      <div className="flex flex-col md:flex-row md:py-6 space-y-8 md:space-x-10 md:space-y-0 mt-6 mb-6">
         {cards.map((card) => (
           <Card
             key={card.id}
